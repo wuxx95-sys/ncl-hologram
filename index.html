@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>國家圖書館南部分館｜智慧服務全館掃描（全息導覽影片）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#05100f;color:#dff7f5;font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+main{max-width:1100px;margin:0 auto;padding:22px 16px 40px}
+.k{font-size:13px;letter-spacing:.3em;color:#7fe7df}
+h1{font-size:clamp(24px,6vw,40px);margin:8px 0 6px;font-weight:800;color:#f2fffd}
+.sub{font-size:15px;color:#9fc9c5;line-height:1.6}
+.v{margin-top:16px;border:1px solid rgba(127,231,223,.35);border-radius:14px;overflow:hidden;background:#000;box-shadow:0 0 40px rgba(47,211,201,.15)}
+video{display:block;width:100%;height:auto;background:#000}
+.hint{margin-top:10px;font-size:13px;color:#7fa7a3}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips span{font-size:13px;border:1px solid rgba(127,231,223,.45);border-radius:20px;padding:4px 12px;color:#c9f5f1}
+footer{margin-top:26px;font-size:12px;color:#5f8783;line-height:1.7}
+</style>
+<script data-goatcounter="https://hyweb-sys.goatcounter.com/count" data-goatcounter-settings='{"allow_local":false,"no_onload":true}' async src="https://gc.zgo.at/count.js"></script>
+</head><body><main>
+<div class="k">全息導覽影片 · NCL-SOUTH</div>
+<h1>智慧服務全館掃描</h1>
+<p class="sub">跟著一位讀者的光點，從館外還書走進各樓層，看服務型機器人、分眾互動設備、館內迷你書車、AMR 與館藏智慧盤點設備如何協同運作，最後匯集到二樓的 AI Agent 視覺化儀表板。</p>
+<div class="v"><video id="v" controls playsinline preload="metadata" poster="poster.jpg"><source src="video.mp4" type="video/mp4"></video></div>
+<p class="hint">約 2 分 20 秒，含旁白與字幕。建議開啟聲音、橫向全螢幕觀看。</p>
+<div class="chips"><span>戶外還書</span><span>2F 館內服務</span><span>3F 找書帶位</span><span>書車回流</span><span>夜間盤點</span><span>AI Agent 儀表板</span></div>
+<footer>凌網資訊股份有限公司｜國家圖書館南部分館智慧服務與機器人應用建置案 服務建議書附屬示意影片<br>設備數量依本案場勘配置；儀表板數值為示意。</footer>
+</main>
+<script>
+(function(){
+  var src=new URLSearchParams(location.search).get('src')||'direct';
+  src=src.replace(/[^a-z0-9_-]/gi,'').slice(0,20)||'direct';
+  var sent={};
+  function count(ev,title){
+    if(sent[ev])return; sent[ev]=1;
+    var go=function(){ if(window.goatcounter&&window.goatcounter.count){ window.goatcounter.count({path:'ncl-hologram/'+src+'/'+ev,title:title||ev,event:true}); return true;} return false; };
+    if(!go()){ var n=0,t=setInterval(function(){ if(go()||++n>40)clearInterval(t); },250); }
+  }
+  count('open','開啟頁面');
+  var v=document.getElementById('v');
+  v.addEventListener('play',function(){count('play','開始播放');});
+  v.addEventListener('timeupdate',function(){ if(v.duration&&v.currentTime/v.duration>=0.5)count('half','看到一半'); });
+  v.addEventListener('ended',function(){count('ended','看完');});
+})();
+</script>
+</body></html>
